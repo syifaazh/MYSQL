@@ -126,7 +126,7 @@ MariaDB [dbtoko]> SELECT jenis_produk_id, SUM(stok) AS total_stok FROM produk GR
 +-----------------+------------+
 4 rows in set (0.001 sec)
 
-//KALUSA HAVING
+//KLAUSA HAVING
 MariaDB [dbtoko]> SELECT stok, SUM(stok) AS jml_stok FROM produk
     -> GROUP BY stok HAVING SUM(stok) > 2;
 +------+----------+
