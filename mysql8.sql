@@ -28,3 +28,15 @@ MariaDB [dbtoko]> SELECT *FROM member;
 |  3 | Staff    | staff    | 6a91eb6ae9cc8e3a67d32b286c56c3 | staff   | staff.jpg   |
 +----+----------+----------+--------------------------------+---------+-------------+
 3 rows in set (0.002 sec)
+
+MariaDB [dbtoko]> ALTER TABLE member MODIFY password varchar (50) NOT NULL;
+Query OK, 3 rows affected (0.166 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [dbtoko]> INSERT INTO member (fullname, username, password, role) VALUES
+    -> ('Admin1', 'admin1', SHA1(MD5(SHA1('mimin'))), 'admin'),
+    -> ('Manager', 'manager', SHA1(MD5(SHA1('manager'))), 'manager'),
+    -> ('Staff1', 'staff1', SHA1(MD5(SHA1('staff'))), 'staff');
+Query OK, 3 rows affected (0.008 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
